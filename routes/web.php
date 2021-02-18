@@ -21,6 +21,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::prefix('admin')->name('admin.')->group(function() {
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::name('dashboards.')->group(function() {
+        Route::view('', 'admin.dashboards.index')->name('index');
+    });
+
+    Route::prefix('posts')->name('posts.')->group(function() {
+        Route::view('', 'admin.posts.index')->name('index');
+        Route::view('create', 'admin.posts.create')->name('create');
+    });
+});
