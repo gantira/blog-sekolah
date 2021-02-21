@@ -344,4 +344,8 @@
 
     </div>
 
+    @push('js')
+    <script src="{{ asset('ruangadmin/vendor/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('ruangadmin/js/demo/chart-area-demo.js') }}"></script>
+    @endpush
 </x-admin-layout>

@@ -27,6 +27,7 @@ class PostFactory extends Factory
             'title' => Str::title($this->faker->sentence()),
             'slug' => $this->faker->slug(),
             'body' => $this->faker->sentence(50),
+            'thumbnail' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6V_R6WMnHzN5bpexR-vQ1tNickx9phBGTHA&usqp=CAU',
             'status' => $this->faker->randomElement(['published', 'draft']),
         ];
     }

@@ -45,8 +45,6 @@
     <script src="{{ asset('ruangadmin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('ruangadmin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('ruangadmin/js/ruang-admin.min.js') }}"></script>
-    <script src="{{ asset('ruangadmin/vendor/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ asset('ruangadmin/js/demo/chart-area-demo.js') }}"></script>
 
     @stack('js')
 </body>

@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->longText('body');
+            $table->string('thumbnail')->nullable();
             $table->enum('status', ['published', 'draft']);
             $table->timestamps();
         });

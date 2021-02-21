@@ -57,17 +57,12 @@
             <div class="container">
 
                 <div class="row">
-
-                    {{ $slot }}
-                    <!-- End blog entries list -->
-
+                    <div class="col-lg-8 entries">
+                        {{ $slot }}
+                    </div>
                     <div class="col-lg-4">
-
                         <x-app.sidebar />
-                        <!-- End sidebar -->
-
-                    </div><!-- End blog sidebar -->
-
+                    </div>
                 </div>
 
             </div>

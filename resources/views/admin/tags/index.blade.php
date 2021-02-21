@@ -4,11 +4,11 @@
         <x-admin.alert />
 
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Post</h1>
+            <h1 class="h3 mb-0 text-gray-800">Tag</h1>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="./">Home</a></li>
                 <li class="breadcrumb-item">Blog</li>
-                <li class="breadcrumb-item active" aria-current="page">Post</li>
+                <li class="breadcrumb-item active" aria-current="page">Tag</li>
             </ol>
         </div>
 
@@ -16,38 +16,32 @@
             <div class="col-lg-12 mb-4">
                 <div class="card">
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between w-100">
-                        <form method="GET" action="{{ route('admin.posts.index') }}" class="w-100">
+                        <form method="GET" action="{{ route('admin.tags.index') }}" class="w-100">
                             <input type="search" name="search" id="search" class="form-control">
                         </form>
                     </div>
                     <div class="table-responsive">
-                        <x-admin.table class="">
+                        <x-admin.table>
                             <x-admin.thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Title</th>
-                                    <th>Body</th>
-                                    <th>Status</th>
+                                    <th>Name</th>
                                     <th></th>
                                 </tr>
                             </x-admin.thead>
                             <x-admin.tbody>
-                                @forelse ($posts as $key => $item)
+                                @forelse ($tags as $key => $item)
                                 <tr>
-                                    <td>{{ $posts->firstItem() + $key }}</td>
-                                    <td>{{ $item->title }}</td>
-                                    <td>{!! \Str::limit(strip_tags($item->body), 200) !!}</td>
-                                    <td>
-                                        <x-admin.badge :status="$item->status">{{ $item->status }}</x-admin.badge>
-                                    </td>
+                                    <td>{{ $tags->firstItem() + $key }}</td>
+                                    <td>{{ $item->name }}</td>
                                     <td class="d-flex justify-content-end">
-                                        <a href="{{ route('admin.posts.edit', $item) }}" class="btn btn-primary mr-1">Edit</a>
+                                        <a href="{{ route('admin.tags.edit', $item) }}" class="btn  btn-primary mr-1">Edit</a>
 
-                                        <form action="{{ route('admin.posts.delete', $item) }}" method="POST" onclick="return confirm('Are you sure?')">
+                                        <form action="{{ route('admin.tags.delete', $item) }}" method="POST" onclick="return confirm('Are you sure?')">
                                             @csrf
                                             @method('DELETE')
 
-                                            <button type="submit" class="btn btn-primary">Delete</button>
+                                            <button type="submit" class="btn  btn-primary">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -60,7 +54,7 @@
                         </x-admin.table>
                     </div>
                     <div class="card-footer">
-                        {{ $posts->links() }}
+                        {{ $tags->links() }}
                     </div>
                 </div>
             </div>

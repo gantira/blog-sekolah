@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,14 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::when(request()->search, function ($query) {
+            $query->where('name', 'like', '%' . request()->search . '%');
+        })
+            ->paginate(10);
+
+        return view('admin.categories.index', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -24,7 +32,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create', [
+            'category' => new Category
+        ]);
     }
 
     /**
@@ -35,7 +45,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:categories,name|min:3|max:255'
+        ]);
+
+        Category::create([
+            'name' => $request->name,
+        ]);
+
+        return redirect()->route('admin.categories.index')->with('message', 'New Category has been submit!');
     }
 
     /**
@@ -57,7 +75,9 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', [
+            'category' => $category
+        ]);
     }
 
     /**
@@ -69,7 +89,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:categories,name,' . $category->id . '|min:3|max:255'
+        ]);
+
+        $category->update([
+            'name' => $request->name,
+        ]);
+
+        return redirect()->route('admin.categories.index')->with('message', 'Category has been updated!');
     }
 
     /**
@@ -80,6 +108,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->route('admin.categories.index')->with('message', 'Category deleted successfully!');
     }
 }

@@ -15,65 +15,63 @@
     <div class="sidebar-heading">
         Features
     </div>
-    <x-admin.nav-item :active="request()->is('admin/posts/*') || request()->is('admin/posts')">
-        <x-admin.nav-link name="Blog" />
-        <x-admin.collapse-show name="Blog" :show="request()->is('admin/posts/*') || request()->is('admin/posts')">
+    <x-admin.nav-item :active="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories') || request()->is('admin/tags/*') || request()->is('admin/tags')">
+        <x-admin.nav-link name="Blog" icon="fa fa-blog" />
+        <x-admin.collapse-show name="Blog" :show="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories') || request()->is('admin/tags/*') || request()->is('admin/tags')">
             <h6 class="collapse-header">Post</h6>
-            <x-admin.collapse-item :href="route('admin.posts.index')" :active="request()->routeIs('admin.posts.index')">
+            <x-admin.collapse-item :href="route('admin.posts.index')" :active="request()->is('admin/posts')">
                 {{ __('Table') }}
             </x-admin.collapse-item>
-            <x-admin.collapse-item :href="route('admin.posts.create')"
-                :active="request()->routeIs('admin.posts.create')">
+            <x-admin.collapse-item :href="route('admin.posts.create')" :active="request()->routeIs('admin.posts.create')">
+                {{ __('Create') }}
+            </x-admin.collapse-item>
+        </x-admin.collapse-show>
+
+        <x-admin.collapse-show name="Blog" :show="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories') || request()->is('admin/tags/*') || request()->is('admin/tags')">
+            <h6 class="collapse-header">Category</h6>
+            <x-admin.collapse-item :href="route('admin.categories.index')" :active="request()->is('admin/categories')">
+                {{ __('Table') }}
+            </x-admin.collapse-item>
+            <x-admin.collapse-item :href="route('admin.categories.create')" :active="request()->routeIs('admin.categories.create')">
+                {{ __('Create') }}
+            </x-admin.collapse-item>
+        </x-admin.collapse-show>
+
+        <x-admin.collapse-show name="Blog" :show="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories') || request()->is('admin/tags/*') || request()->is('admin/tags')">
+            <h6 class="collapse-header">Tag</h6>
+            <x-admin.collapse-item :href="route('admin.tags.index')" :active="request()->is('admin/tags')">
+                {{ __('Table') }}
+            </x-admin.collapse-item>
+            <x-admin.collapse-item :href="route('admin.tags.create')" :active="request()->routeIs('admin.tags.create')">
                 {{ __('Create') }}
             </x-admin.collapse-item>
         </x-admin.collapse-show>
     </x-admin.nav-item>
 
-    <x-admin.nav-item :active="request()->is('admin/control/*') || request()->is('admin/control')">
-        <x-admin.nav-link name="Control" />
-        <x-admin.collapse-show name="Control" :show="request()->is('admin/control/*') || request()->is('admin/control')">
-            <h6 class="collapse-header">Post</h6>
-            <x-admin.collapse-item :href="route('admin.posts.index')" :active="request()->routeIs('admin.posts.index')">
+    <x-admin.nav-item :active="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories') || request()->is('admin/tags/*') || request()->is('admin/tags')">
+        <x-admin.nav-link name="Registration" icon="far fa-registered" />
+        <x-admin.collapse-show name="Registration" :show="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories') || request()->is('admin/tags/*') || request()->is('admin/tags')">
+            <x-admin.collapse-item :href="route('admin.posts.index')" :active="request()->is('admin/posts')">
                 {{ __('Table') }}
             </x-admin.collapse-item>
-            <x-admin.collapse-item :href="route('admin.posts.create')"
-                :active="request()->routeIs('admin.posts.create')">
-                {{ __('Create') }}
+            <x-admin.collapse-item :href="route('admin.posts.create')" :active="request()->routeIs('admin.posts.create')">
+                {{ __('Export') }}
             </x-admin.collapse-item>
         </x-admin.collapse-show>
     </x-admin.nav-item>
 
-    <li class="nav-item">
-        <a class="nav-link" href="ui-colors.html">
-            <i class="fas fa-fw fa-palette"></i>
-            <span>UI Colors</span>
-        </a>
-    </li>
     <hr class="sidebar-divider">
     <div class="sidebar-heading">
-        Examples
+        Session
     </div>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
-            aria-controls="collapsePage">
-            <i class="fas fa-fw fa-columns"></i>
-            <span>Pages</span>
+        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();getElementById('logout').submit();">
+            <i class="fas fa-fw fa-sign-out-alt"></i>
+            <span>Logout</span>
         </a>
-        <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Example Pages</h6>
-                <a class="collapse-item" href="login.html">Login</a>
-                <a class="collapse-item" href="register.html">Register</a>
-                <a class="collapse-item" href="404.html">404 Page</a>
-                <a class="collapse-item" href="blank.html">Blank Page</a>
-            </div>
-        </div>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span>
-        </a>
+        <form action="{{ route('logout') }}" method="POST" id="logout">
+            @csrf
+        </form>
     </li>
     <hr class="sidebar-divider">
     <div class="version" id="version-ruangadmin"></div>
