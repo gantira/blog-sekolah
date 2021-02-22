@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\{CategoryController, PostController, TagController};
+use App\Http\Controllers\Admin\{CategoryController, PostController, RegistrationController, TagController};
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +53,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('{tag}', [TagController::class, 'edit'])->name('edit');
         Route::put('{tag}', [TagController::class, 'update'])->name('update');
         Route::delete('{tag}', [TagController::class, 'destroy'])->name('delete');
+    });
+
+    Route::prefix('registrations')->name('registrations.')->group(function () {
+        Route::get('', [RegistrationController::class, 'index'])->name('index');
+        Route::get('/export', [RegistrationController::class, 'export'])->name('export');
+        Route::post('/export', [RegistrationController::class, 'exportExcel'])->name('exportExcel');
+        Route::post('', [RegistrationController::class, 'store'])->name('store');
+        Route::get('create', [RegistrationController::class, 'create'])->name('create');
+        Route::get('{registration}', [RegistrationController::class, 'edit'])->name('edit');
+        Route::put('{registration}', [RegistrationController::class, 'update'])->name('update');
+        Route::delete('{registration}', [RegistrationController::class, 'destroy'])->name('delete');
     });
 });
 

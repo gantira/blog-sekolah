@@ -36,7 +36,8 @@
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="icofont-user"></i> <a
-                                            href="#">{{ $post->user->name}}</a></li>
+                                            href="{{ route('blogs.index', ['author' => $post->user->username]) }}">{{ $post->user->name}}</a>
+                                    </li>
                                     <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a
                                             href="#"><time
                                                 datetime="2020-01-01">{{ $post->created_at->format('M d, Y') }}</time></a>
@@ -58,7 +59,9 @@
                                     <i class="icofont-folder"></i>
                                     <ul class="cats">
                                         @foreach ($post->categories as $item)
-                                        <li><a href="{{ route('blogs.index', ['categories' => $item->name]) }}">{{ $item->name }}</a></li>
+                                        <li><a
+                                                href="{{ route('blogs.index', ['categories' => $item->name]) }}">{{ $item->name }}</a>
+                                        </li>
                                         @endforeach
                                     </ul>
                                     @endif
@@ -67,7 +70,9 @@
                                     <i class="icofont-tags"></i>
                                     <ul class="tags">
                                         @foreach ($post->tags as $item)
-                                        <li><a href="{{ route('blogs.index', ['tags' => $item->name]) }}">{{ $item->name }}</a></li>
+                                        <li><a
+                                                href="{{ route('blogs.index', ['tags' => $item->name]) }}">{{ $item->name }}</a>
+                                        </li>
                                         @endforeach
                                     </ul>
                                     @endif

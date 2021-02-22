@@ -48,13 +48,13 @@
         </x-admin.collapse-show>
     </x-admin.nav-item>
 
-    <x-admin.nav-item :active="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories') || request()->is('admin/tags/*') || request()->is('admin/tags')">
+    <x-admin.nav-item :active="request()->is('admin/registrations/*') || request()->is('admin/registrations')">
         <x-admin.nav-link name="Registration" icon="far fa-registered" />
-        <x-admin.collapse-show name="Registration" :show="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories') || request()->is('admin/tags/*') || request()->is('admin/tags')">
-            <x-admin.collapse-item :href="route('admin.posts.index')" :active="request()->is('admin/posts')">
+        <x-admin.collapse-show name="Registration" :show="request()->is('admin/registrations/*') || request()->is('admin/registrations')">
+            <x-admin.collapse-item :href="route('admin.registrations.index')" :active="request()->is('admin/registrations')">
                 {{ __('Table') }}
             </x-admin.collapse-item>
-            <x-admin.collapse-item :href="route('admin.posts.create')" :active="request()->routeIs('admin.posts.create')">
+            <x-admin.collapse-item :href="route('admin.registrations.export')" :active="request()->routeIs('admin.registrations.export')">
                 {{ __('Export') }}
             </x-admin.collapse-item>
         </x-admin.collapse-show>

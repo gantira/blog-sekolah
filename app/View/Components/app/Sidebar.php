@@ -32,9 +32,9 @@ class Sidebar extends Component
     public function render()
     {
         return view('components.app.sidebar', [
-            'categories' => $this->categories,
-            'tags' => $this->tags,
-            'posts' => $this->posts,
+            'sidebar_categories' => $this->categories,
+            'sidebar_tags' => $this->tags,
+            'sidebar_posts' => $this->posts,
         ]);
     }
 }

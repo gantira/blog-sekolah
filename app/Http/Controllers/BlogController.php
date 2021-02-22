@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -38,6 +40,9 @@ class BlogController extends Controller
 
         return view('blogs.index', [
             'posts' => $posts,
+            'sidebar_categories' => Category::select('name', 'slug')->withCount(['posts'])->whereHas('posts')->get(),
+            'sidebar_tags' => Tag::select('name', 'slug')->withCount(['posts'])->whereHas('posts')->get(),
+            'sidebar_posts' => Post::select('title', 'slug', 'created_at')->whereStatus('published')->limit(5)->inRandomOrder()->get(),
         ]);
     }
 
