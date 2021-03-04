@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\{CategoryController, PostController, RegistrationController, TagController};
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\{ArticleController, ContactController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -67,7 +67,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
 });
 
-Route::name('blogs.')->group(function () {
-    Route::get('', [BlogController::class, 'index'])->name('index');
-    Route::get('{post:slug}', [BlogController::class, 'show'])->name('show');
+// FrontEnd
+Route::prefix('articles')->name('articles.')->group(function () {
+    Route::get('', [ArticleController::class, 'index'])->name('index');
+    Route::get('{post:slug}', [ArticleController::class, 'show'])->name('show');
+});
+Route::prefix('contacts')->name('contacts.')->group(function () {
+    Route::get('', [ContactController::class, 'index'])->name('index');
 });

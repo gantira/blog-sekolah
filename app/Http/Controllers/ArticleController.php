@@ -7,7 +7,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,7 +38,7 @@ class BlogController extends Controller
             ->latest()
             ->paginate(5);
 
-        return view('blogs.index', [
+        return view('articles.index', [
             'posts' => $posts,
             'sidebar_categories' => Category::select('name', 'slug')->withCount(['posts'])->whereHas('posts')->get(),
             'sidebar_tags' => Tag::select('name', 'slug')->withCount(['posts'])->whereHas('posts')->get(),
@@ -75,7 +75,7 @@ class BlogController extends Controller
      */
     public function show(Post $post)
     {
-        return view('blogs.show', [
+        return view('articles.show', [
             'post' => $post
         ]);
     }

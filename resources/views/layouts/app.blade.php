@@ -56,14 +56,7 @@
         <section id="blog" class="blog">
             <div class="container">
 
-                <div class="row">
-                    <div class="col-lg-8 entries">
-                        {{ $slot }}
-                    </div>
-                    <div class="col-lg-4">
-                        <x-app.sidebar />
-                    </div>
-                </div>
+                {{ $slot }}
 
             </div>
         </section>
