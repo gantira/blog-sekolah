@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\{CategoryController, PostController, RegistrationController, TagController};
-use App\Http\Controllers\{ArticleController, ContactController};
+use App\Http\Controllers\{ArticleController, ContactController, GalleryController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -72,6 +72,11 @@ Route::prefix('articles')->name('articles.')->group(function () {
     Route::get('', [ArticleController::class, 'index'])->name('index');
     Route::get('{post:slug}', [ArticleController::class, 'show'])->name('show');
 });
+
 Route::prefix('contacts')->name('contacts.')->group(function () {
     Route::get('', [ContactController::class, 'index'])->name('index');
+});
+
+Route::prefix('galleries')->name('galleries.')->group(function () {
+    Route::get('', [GalleryController::class, 'index'])->name('index');
 });

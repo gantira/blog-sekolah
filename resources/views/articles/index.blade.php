@@ -1,4 +1,4 @@
-<x-app-layout categories="$categories">
+<x-app-layout>
 
     <x-slot name="breadcrumbs">
         <section id="breadcrumbs" class="breadcrumbs">
@@ -57,7 +57,7 @@
             @endforelse
         </div>
         <div class="col-lg-4">
-            <x-app.sidebar />
+            @include('layouts._sidebar')
         </div>
     </div>
 

@@ -76,7 +76,10 @@ class ArticleController extends Controller
     public function show(Post $post)
     {
         return view('articles.show', [
-            'post' => $post
+            'post' => $post,
+            'sidebar_categories' => Category::select('name', 'slug')->withCount(['posts'])->whereHas('posts')->get(),
+            'sidebar_tags' => Tag::select('name', 'slug')->withCount(['posts'])->whereHas('posts')->get(),
+            'sidebar_posts' => Post::select('title', 'slug', 'created_at')->whereStatus('published')->limit(5)->inRandomOrder()->get(),
         ]);
     }
 

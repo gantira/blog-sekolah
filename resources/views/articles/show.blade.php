@@ -114,7 +114,7 @@
             </main>
         </div>
         <div class="col-lg-4">
-            <x-app.sidebar />
+            @include('layouts._sidebar')
         </div>
     </div>
 </x-app-layout>

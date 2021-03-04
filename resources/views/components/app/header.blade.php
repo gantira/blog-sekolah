@@ -32,7 +32,7 @@
                 <li><a href="pricing.html">Pricing</a></li> --}}
                 <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
                 <li class="{{ request()->is('contacts') ? 'active' : '' }}"><a href="{{ route('contacts.index') }}">Contact</a></li>
-                <li class="{{ request()->is('articles') ? 'active' : '' }}"><a href="{{ route('articles.index') }}">Gallery</a></li>
+                <li class="{{ request()->is('galleries') ? 'active' : '' }}"><a href="{{ route('galleries.index') }}">Gallery</a></li>
                 <li class="{{ request()->is('articles') ? 'active' : '' }}"><a href="{{ route('articles.index') }}">Article</a></li>
 
             </ul>

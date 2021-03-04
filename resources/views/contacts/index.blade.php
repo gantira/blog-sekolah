@@ -1,4 +1,4 @@
-<x-app-layout categories="$categories">
+<x-app-layout>
 
     <x-slot name="breadcrumbs">
         <section id="breadcrumbs" class="breadcrumbs">
