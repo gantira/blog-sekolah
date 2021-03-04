@@ -30,10 +30,10 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="pricing.html">Pricing</a></li> --}}
-                <li class="active"><a href="{{ route('articles.index') }}">Home</a></li>
-                <li class="active"><a href="{{ route('contacts.index') }}">Contact</a></li>
-                <li class="active"><a href="{{ route('articles.index') }}">Gallery</a></li>
-                <li class="active"><a href="{{ route('articles.index') }}">Article</a></li>
+                <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
+                <li class="{{ request()->is('contacts') ? 'active' : '' }}"><a href="{{ route('contacts.index') }}">Contact</a></li>
+                <li class="{{ request()->is('articles') ? 'active' : '' }}"><a href="{{ route('articles.index') }}">Gallery</a></li>
+                <li class="{{ request()->is('articles') ? 'active' : '' }}"><a href="{{ route('articles.index') }}">Article</a></li>
 
             </ul>
         </nav><!-- .nav-menu -->

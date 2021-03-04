@@ -2,80 +2,294 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="{{ asset('ruangadmin/img/logo/logo.png') }}" rel="icon">
-    <title>{{ config('app.name') }} - Login</title>
-    <link href="{{ asset('ruangadmin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('ruangadmin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('ruangadmin/css/ruang-admin.min.css') }}" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+    <title>{{ config('app.name') }}</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{{ asset('eterna/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('eterna/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{ asset('eterna/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('eterna/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('eterna/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('eterna/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('eterna/vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('eterna/vendor/venobox/venobox.css') }}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('eterna/css/style.css') }}" rel="stylesheet">
+
+    <!-- =======================================================
+      * Template Name: Eterna - v2.2.1
+      * Template URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
+      * Author: BootstrapMade.com
+      * License: https://bootstrapmade.com/license/
+      ======================================================== -->
 </head>
 
-<body class="bg-gradient-login">
-    <!-- Login Content -->
-    <div class="container-login">
-        <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-12 col-md-9">
-                <div class="card shadow-sm my-5">
-                    <div class="card-body p-0">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="login-form">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Login</h1>
-                                    </div>
-                                    <form class="user">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" id="exampleInputEmail"
-                                                aria-describedby="emailHelp" placeholder="Enter Email Address">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" id="exampleInputPassword"
-                                                placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small"
-                                                style="line-height: 1.5rem;">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <a href="index.html" class="btn btn-primary btn-block">Login</a>
-                                        </div>
-                                        <hr>
-                                        <a href="index.html" class="btn btn-google btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="index.html" class="btn btn-facebook btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="font-weight-bold small" href="register.html">Create an Account!</a>
-                                    </div>
-                                    <div class="text-center">
-                                    </div>
-                                </div>
+<body>
+
+    <!-- ======= Top Bar ======= -->
+    <x-app.topbar />
+
+    <!-- ======= Header ======= -->
+    <x-app.header />
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+        <div class="hero-container">
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+                <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+                <div class="carousel-inner" role="listbox">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active" style="background: url(assets/img/slide/slide-1.jpg)">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2 class="animate__animated animate__fadeInDown"><span>{{ config('app.name') }}</span>
+                                </h2>
+                                <p class="animate__animated animate__fadeInUp">SMP Mazaya Islamic Boarding School
+                                    mengutamakan Al-Qur'an dan Al-Hadist sebagai pondasi utama pendidikan yang
+                                    mengintegrasikan pendidikan formal dengan pendidikan karakter bela negara.</p>
+                                <a href="http://ppdb.smpmazayaibs.sch.id/"
+                                    class="btn-get-started animate__animated animate__fadeInUp">Daftar</a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item" style="background: url(assets/img/slide/slide-2.jpg)">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2 class="animate__animated fanimate__adeInDown">Lorem <span>Ipsum Dolor</span></h2>
+                                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui
+                                    aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
+                                    mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
+                                    vel. Minus et tempore modi architecto.</p>
+                                <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-item" style="background: url(assets/img/slide/slide-3.jpg)">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2 class="animate__animated animate__fadeInDown">Sequi ea <span>Dime Lara</span></h2>
+                                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui
+                                    aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
+                                    mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
+                                    vel. Minus et tempore modi architecto.</p>
+                                <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
+                <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon icofont-rounded-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon icofont-rounded-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
             </div>
         </div>
-    </div>
-    <!-- Login Content -->
-    <script src="{{ asset('ruangadmin/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('ruangadmin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('ruangadmin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-    <script src="{{ asset('ruangadmin/js/ruang-admin.min.js') }}"></script>
+    </section><!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= Featured Section ======= -->
+        <section id="featured" class="featured">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="icon-box">
+                            <i class="icofont-computer"></i>
+                            <h3><a href="">Character</a></h3>
+                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                                occaecati cupiditate non provident</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="icon-box">
+                            <i class="icofont-image"></i>
+                            <h3><a href="">Integrity</a></h3>
+                            <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat tarad limino ata</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="icon-box">
+                            <i class="icofont-tasks-alt"></i>
+                            <h3><a href="">Competence</a></h3>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Featured Section -->
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content">
+                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                        <p class="font-italic">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore
+                            magna aliqua.
+                        </p>
+                        <ul>
+                            <li><i class="icofont-check-circled"></i> Hatam makna Al-Qur'an dan 20 Himpunan</li>
+                            <li><i class="icofont-check-circled"></i> Tahfidz 7 Juz (Juz 30, 1-5 dan surat-surat pilihan)</li>
+                            <li><i class="icofont-check-circled"></i> Pengaturan & Pengawasan Jadwal Kegiatan 24 Jam</li>
+                            <li><i class="icofont-check-circled"></i> Lingkungan yang kondusif</li>
+                            <li><i class="icofont-check-circled"></i> Pembentukan kemandirian dan evaluasi dengan ujian kemandirian</li>
+                            <li><i class="icofont-check-circled"></i> Evaluasi pembelajaran KBM & Boarding dilakukan secara berkala</li>
+                            <li><i class="icofont-check-circled"></i> Pendidikan formal yang berintegrasi dengan pendidikan agama</li>
+                            <li><i class="icofont-check-circled"></i> Sistem small class (1 kelas maksimal 25 orang)</li>
+                        </ul>
+                        <p>
+                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in
+                            culpa qui officia deserunt mollit anim id est laborum
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Section -->
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Prestasi</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                            <h4><a href="">Juara 1 Tahfidz</a></h4>
+                            <p>(Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi)</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <h4><a href="">Juara 1 MHQ</a></h4>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-tachometer"></i></div>
+                            <h4><a href="">Juara 1 Speech Contest</a></h4>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-world"></i></div>
+                            <h4><a href="">Juara 1 Pengetahuan Seni Budaya</a></h4>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-slideshow"></i></div>
+                            <h4><a href="">10 Medali Emas</a></h4>
+                            <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->
+
+        <!-- ======= Clients Section ======= -->
+        <section id="clients" class="clients">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Clients</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
+
+                <div class="owl-carousel clients-carousel">
+                    <img src="{{ asset('eterna/img/clients/client-1.png') }}" alt="">
+                    <img src="{{ asset('eterna/img/clients/client-2.png') }}" alt="">
+                    <img src="{{ asset('eterna/img/clients/client-3.png') }}" alt="">
+                    <img src="{{ asset('eterna/img/clients/client-4.png') }}" alt="">
+                    <img src="{{ asset('eterna/img/clients/client-5.png') }}" alt="">
+                    <img src="{{ asset('eterna/img/clients/client-6.png') }}" alt="">
+                    <img src="{{ asset('eterna/img/clients/client-7.png') }}" alt="">
+                    <img src="{{ asset('eterna/img/clients/client-8.png') }}" alt="">
+                </div>
+
+            </div>
+        </section><!-- End Clients Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <x-app.footer />
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{{ asset('eterna/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('eterna/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('eterna/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('eterna/vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ asset('eterna/vendor/jquery-sticky/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('eterna/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('eterna/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('eterna/vendor/counterup/counterup.min.js') }}"></script>
+    <script src="{{ asset('eterna/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('eterna/vendor/venobox/venobox.min.js') }}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{ asset('eterna/js/main.js') }}"></script>
+
 </body>
 
 </html>
