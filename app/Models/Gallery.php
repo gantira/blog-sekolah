@@ -28,7 +28,24 @@ class Gallery extends Model
 
     protected $fillable = [
         'title',
-        'description',
+        'category',
+        'body',
         'slug',
+        'status',
     ];
+
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
+
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

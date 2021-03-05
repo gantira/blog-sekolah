@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\{CategoryController, PostController, RegistrationController, TagController};
+use App\Http\Controllers\Admin\{CategoryController, GalleryController as AdminGalleryController, PostController, RegistrationController, TagController};
 use App\Http\Controllers\{ArticleController, ContactController, GalleryController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -57,13 +57,24 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::prefix('registrations')->name('registrations.')->group(function () {
         Route::get('', [RegistrationController::class, 'index'])->name('index');
-        Route::get('/export', [RegistrationController::class, 'export'])->name('export');
-        Route::post('/export', [RegistrationController::class, 'exportExcel'])->name('exportExcel');
+        Route::get('export', [RegistrationController::class, 'export'])->name('export');
+        Route::post('export', [RegistrationController::class, 'exportExcel'])->name('exportExcel');
         Route::post('', [RegistrationController::class, 'store'])->name('store');
         Route::get('create', [RegistrationController::class, 'create'])->name('create');
         Route::get('{registration}', [RegistrationController::class, 'edit'])->name('edit');
         Route::put('{registration}', [RegistrationController::class, 'update'])->name('update');
         Route::delete('{registration}', [RegistrationController::class, 'destroy'])->name('delete');
+    });
+
+    Route::prefix('galleries')->name('galleries.')->group(function () {
+        Route::get('', [AdminGalleryController::class, 'index'])->name('index');
+        Route::get('export', [AdminGalleryController::class, 'export'])->name('export');
+        Route::post('export', [AdminGalleryController::class, 'exportExcel'])->name('exportExcel');
+        Route::post('', [AdminGalleryController::class, 'store'])->name('store');
+        Route::get('create', [AdminGalleryController::class, 'create'])->name('create');
+        Route::get('{registration}', [AdminGalleryController::class, 'edit'])->name('edit');
+        Route::put('{registration}', [AdminGalleryController::class, 'update'])->name('update');
+        Route::delete('{registration}', [AdminGalleryController::class, 'destroy'])->name('delete');
     });
 });
 
@@ -79,4 +90,5 @@ Route::prefix('contacts')->name('contacts.')->group(function () {
 
 Route::prefix('galleries')->name('galleries.')->group(function () {
     Route::get('', [GalleryController::class, 'index'])->name('index');
+    Route::get('{gallery:slug}', [GalleryController::class, 'show'])->name('show');
 });

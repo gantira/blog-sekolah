@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGalleriesTable extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateGalleriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('galleries', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->string('title')->nullable();
-            $table->text('body')->nullable();
-            $table->string('slug')->nullable();
-            $table->enum('status', ['published', 'draft']);
+            // $table->foreignId('image_id');
+            // $table->string('image_type');
+            $table->morphs('imageable'); // morphs => untuk create otomatis 2 atribut di atas
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateGalleriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galleries');
+        Schema::dropIfExists('images');
     }
 }

@@ -13,7 +13,7 @@
 
 <div class="form-group">
     <label for="thumbnail">Thumbnail</label>
-    <input type="file" name="thumbnail" id="thumbnail" class="form-control @error('thumbnail') is-invalid @enderror" accept="image/*">
+    <input type="file" name="thumbnail" id="thumbnail" class="form-control-file @error('thumbnail') is-invalid @enderror" accept="image/*">
     @error('thumbnail')
     <div class="invalid-feedback">
         {{ $message }}
@@ -58,7 +58,7 @@
 </div>
 
 <div class="form-group">
-    <label for="status">Status</label>
+    <label for="status">Status <span class="text-danger">*</span></label>
     <select class="form-control" name="status" id="status">
         <option {{ $post->status == 'published' ? 'selected' : '' }} value="published">Published</option>
         <option {{ $post->status == 'draft' ? 'selected' : '' }} value="draft">Draft</option>
@@ -95,8 +95,10 @@
 <!-- RuangAdmin Javascript -->
 <script src="{{ asset('ruangadmin/js/ruang-admin.min.js') }}"></script>
 <!-- Javascript for this page -->
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 <script>
     $(document).ready(function () {
+        CKEDITOR.replace( 'editor1' );
 
          $('.select2-single').select2();
 

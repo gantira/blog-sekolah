@@ -74,6 +74,8 @@
     <!-- Template Main JS File -->
     <script src="{{ asset('eterna/js/main.js') }}"></script>
 
+    @stack('js')
+
 </body>
 
 </html>

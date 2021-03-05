@@ -89,24 +89,24 @@
                         <div class="icon-box">
                             <i class="icofont-computer"></i>
                             <h3><a href="">Character</a></h3>
-                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                                occaecati cupiditate non provident</p>
+                            {{-- <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                                occaecati cupiditate non provident</p> --}}
                         </div>
                     </div>
                     <div class="col-lg-4 mt-4 mt-lg-0">
                         <div class="icon-box">
                             <i class="icofont-image"></i>
                             <h3><a href="">Integrity</a></h3>
-                            <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat tarad limino ata</p>
+                            {{-- <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat tarad limino ata</p> --}}
                         </div>
                     </div>
                     <div class="col-lg-4 mt-4 mt-lg-0">
                         <div class="icon-box">
                             <i class="icofont-tasks-alt"></i>
                             <h3><a href="">Competence</a></h3>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                nulla pariatur</p>
+                            {{-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur</p> --}}
                         </div>
                     </div>
                 </div>
@@ -123,11 +123,8 @@
                         <img src="{{ asset('eterna/img/about.jpg') }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content">
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                        <h3>Kenapa harus memilih SMP Mazaya Islamic Boarding School?</h3>
                         <p class="font-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
                         </p>
                         <ul>
                             <li><i class="icofont-check-circled"></i> Hatam makna Al-Qur'an dan 20 Himpunan</li>
@@ -145,13 +142,13 @@
                             <li><i class="icofont-check-circled"></i> Sistem small class (1 kelas maksimal 25 orang)
                             </li>
                         </ul>
-                        <p>
+                        {{-- <p>
                             Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
                             reprehenderit in voluptate
                             velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                             proident, sunt in
                             culpa qui officia deserunt mollit anim id est laborum
-                        </p>
+                        </p> --}}
                     </div>
                 </div>
 
@@ -167,43 +164,43 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="col-lg-4 col-md-6">
                         <div class="icon-box">
                             <div class="icon"><i class="bx bxl-dribbble"></i></div>
                             <h4><a href="">Juara 1 Tahfidz</a></h4>
-                            <p>(Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi)</p>
+                            <p>(1 Juz Musabaqoh)</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                    <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-file"></i></div>
                             <h4><a href="">Juara 1 MHQ</a></h4>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                            <p>(Pentas PAI Putra Musabaqoh Hifdzin Qur'an)</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                    <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-tachometer"></i></div>
                             <h4><a href="">Juara 1 Speech Contest</a></h4>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                            <p>SMANSA English Contest</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                    <div class="col-lg-4 col-md-6 mt-4">
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-world"></i></div>
                             <h4><a href="">Juara 1 Pengetahuan Seni Budaya</a></h4>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                            <p>PRATAMA BN 666 Cup</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                    <div class="col-lg-4 col-md-6 mt-4">
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-slideshow"></i></div>
                             <h4><a href="">10 Medali Emas</a></h4>
-                            <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+                            <p>Pakubumi Cup Asia Eropa 2017</p>
                         </div>
                     </div>
 
@@ -214,7 +211,38 @@
         <!-- End Services Section -->
 
         <!-- ======= Clients Section ======= -->
-        <x-app.section-clients />
+        {{-- <x-app.section-clients /> --}}
         <!-- End Clients Section -->
     </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{ asset('eterna/img/banner.jpg') }}" alt="" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <a href="http://ppdb.smpmazayaibs.sch.id/" class="btn btn-success btn-block">DAFTAR</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @push('js')
+    <script>
+        $(document).ready(function() {
+            $('#myModal').modal('show')
+        });
+    </script>
+    @endpush
+
+
 </x-guest-layout>

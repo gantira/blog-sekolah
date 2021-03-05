@@ -1,12 +1,10 @@
 <x-admin-layout>
-
     <div class="container-fluid" id="container-wrapper">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Create a Post</h1>
+            <h1 class="h3 mb-0 text-gray-800">Create a Gallery</h1>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="./">Home</a></li>
-                <li class="breadcrumb-item">Blog</li>
-                <li class="breadcrumb-item active" aria-current="page">Create a Post</li>
+                <li class="breadcrumb-item active" aria-current="page">Create a Gallery</li>
             </ol>
         </div>
 
@@ -18,9 +16,9 @@
                         <h6 class="m-0 font-weight-bold text-primary">Please fill in the following form</h6>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.galleries.store') }}" method="POST" enctype="multipart/form-data">
 
-                            @include('admin.posts._form', ['submit' => 'Submit'])
+                            @include('admin.galleries._form', ['submit' => 'Submit'])
 
                         </form>
                     </div>

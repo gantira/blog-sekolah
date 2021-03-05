@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -13,7 +15,10 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('galleries.index');
+        return view('galleries.index', [
+            'galleries' => Gallery::get(),
+            'tags' => Tag::select('name', 'slug')->whereHas('galleries')->get(),
+        ]);
     }
 
     /**
@@ -43,9 +48,11 @@ class GalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Gallery $gallery)
     {
-        //
+        return view('galleries.show', [
+            'gallery' => $gallery
+        ]);
     }
 
     /**

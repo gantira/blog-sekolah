@@ -15,9 +15,9 @@
     <div class="sidebar-heading">
         Features
     </div>
-    <x-admin.nav-item :active="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories') || request()->is('admin/tags/*') || request()->is('admin/tags')">
+    <x-admin.nav-item :active="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories')">
         <x-admin.nav-link name="Blog" icon="fa fa-blog" />
-        <x-admin.collapse-show name="Blog" :show="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories') || request()->is('admin/tags/*') || request()->is('admin/tags')">
+        <x-admin.collapse-show name="Blog" :show="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories')">
             <h6 class="collapse-header">Post</h6>
             <x-admin.collapse-item :href="route('admin.posts.index')" :active="request()->is('admin/posts')">
                 {{ __('Table') }}
@@ -27,7 +27,7 @@
             </x-admin.collapse-item>
         </x-admin.collapse-show>
 
-        <x-admin.collapse-show name="Blog" :show="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories') || request()->is('admin/tags/*') || request()->is('admin/tags')">
+        <x-admin.collapse-show name="Blog" :show="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories')">
             <h6 class="collapse-header">Category</h6>
             <x-admin.collapse-item :href="route('admin.categories.index')" :active="request()->is('admin/categories')">
                 {{ __('Table') }}
@@ -37,12 +37,27 @@
             </x-admin.collapse-item>
         </x-admin.collapse-show>
 
-        <x-admin.collapse-show name="Blog" :show="request()->is('admin/posts/*') || request()->is('admin/posts') || request()->is('admin/categories/*') || request()->is('admin/categories') || request()->is('admin/tags/*') || request()->is('admin/tags')">
-            <h6 class="collapse-header">Tag</h6>
+    </x-admin.nav-item>
+
+    <x-admin.nav-item :active="request()->is('admin/tags/*') || request()->is('admin/tags')">
+        <x-admin.nav-link name="Tag" icon="fas fa-tags" />
+        <x-admin.collapse-show name="Tag" :show="request()->is('admin/tags/*') || request()->is('admin/tags')">
             <x-admin.collapse-item :href="route('admin.tags.index')" :active="request()->is('admin/tags')">
                 {{ __('Table') }}
             </x-admin.collapse-item>
             <x-admin.collapse-item :href="route('admin.tags.create')" :active="request()->routeIs('admin.tags.create')">
+                {{ __('Create') }}
+            </x-admin.collapse-item>
+        </x-admin.collapse-show>
+    </x-admin.nav-item>
+
+    <x-admin.nav-item :active="request()->is('admin/galleries/*') || request()->is('admin/galleries')">
+        <x-admin.nav-link name="Gallery" icon="far fa-image" />
+        <x-admin.collapse-show name="Gallery" :show="request()->is('admin/galleries/*') || request()->is('admin/galleries')">
+            <x-admin.collapse-item :href="route('admin.galleries.index')" :active="request()->is('admin/galleries')">
+                {{ __('Table') }}
+            </x-admin.collapse-item>
+            <x-admin.collapse-item :href="route('admin.galleries.create')" :active="request()->routeIs('admin.galleries.create')">
                 {{ __('Create') }}
             </x-admin.collapse-item>
         </x-admin.collapse-show>

@@ -2,15 +2,13 @@
     <div class="container d-flex">
 
         <div class="logo mr-auto">
-            <h1 class="text-light"><a href="{{ route('articles.index') }}"><span>{{ config('app.name') }}</span></a></h1>
+            <h1 class="text-light"><a href="{{ url('/') }}"><span>{{ config('app.name') }}</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="{{ route('home') }}"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
 
         <nav class="nav-menu d-none d-lg-block">
             <ul>
-                {{-- <li><a href="{{ route('home') }}">Home</a></li> --}}
-
                 {{-- <li class="drop-down"><a href="#">About</a>
                     <ul>
                         <li><a href="team.html">Team</a></li>
