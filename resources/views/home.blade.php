@@ -236,13 +236,13 @@
         </div>
     </div>
 
-    @push('js')
+    {{-- @push('js')
     <script>
         $(document).ready(function() {
             $('#myModal').modal('show')
         });
     </script>
-    @endpush
+    @endpush --}}
 
 
 </x-guest-layout>
