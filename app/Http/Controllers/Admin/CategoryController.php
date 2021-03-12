@@ -53,7 +53,7 @@ class CategoryController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('admin.categories.index')->with('message', 'New Category has been submit!');
+        return redirect()->route('bagas.categories.index')->with('message', 'New Category has been submit!');
     }
 
     /**
@@ -97,7 +97,7 @@ class CategoryController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('admin.categories.index')->with('message', 'Category has been updated!');
+        return redirect()->route('bagas.categories.index')->with('message', 'Category has been updated!');
     }
 
     /**
@@ -110,6 +110,6 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('admin.categories.index')->with('message', 'Category deleted successfully!');
+        return redirect()->route('bagas.categories.index')->with('message', 'Category deleted successfully!');
     }
 }

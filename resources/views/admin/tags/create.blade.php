@@ -18,7 +18,7 @@
                         <h6 class="m-0 font-weight-bold text-primary">Please fill in the following form</h6>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.tags.store') }}" method="POST">
+                        <form action="{{ route('bagas.tags.store') }}" method="POST">
 
                             @include('admin.tags._form', ['submit' => 'Submit'])
 

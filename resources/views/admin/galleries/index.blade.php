@@ -15,7 +15,7 @@
             <div class="col-lg-12 mb-4">
                 <div class="card">
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between ">
-                        <form method="GET" action="{{ route('admin.galleries.index') }}" class="w-100">
+                        <form method="GET" action="{{ route('bagas.galleries.index') }}" class="w-100">
                             <input type="search" name="search" id="search" class="form-control">
                         </form>
                     </div>
@@ -40,9 +40,9 @@
                                         <x-admin.badge :status="$item->status">{{ $item->status }}</x-admin.badge>
                                     </td>
                                     <td class="d-flex justify-content-end">
-                                        <a href="{{ route('admin.galleries.edit', $item) }}" class="btn btn-primary mr-1">Edit</a>
+                                        <a href="{{ route('bagas.galleries.edit', $item) }}" class="btn btn-primary mr-1">Edit</a>
 
-                                        <form action="{{ route('admin.galleries.delete', $item) }}" method="POST" onclick="return confirm('Are you sure?')">
+                                        <form action="{{ route('bagas.galleries.delete', $item) }}" method="POST" onclick="return confirm('Are you sure?')">
                                             @csrf
                                             @method('DELETE')
 

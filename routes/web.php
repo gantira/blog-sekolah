@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::prefix('bagas')->name('bagas.')->group(function () {
 
     Route::name('dashboards.')->group(function () {
         Route::view('', 'admin.dashboards.index')->name('index');

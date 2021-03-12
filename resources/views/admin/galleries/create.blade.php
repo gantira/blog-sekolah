@@ -16,7 +16,7 @@
                         <h6 class="m-0 font-weight-bold text-primary">Please fill in the following form</h6>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.galleries.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('bagas.galleries.store') }}" method="POST" enctype="multipart/form-data">
 
                             @include('admin.galleries._form', ['submit' => 'Submit'])
 

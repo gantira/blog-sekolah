@@ -53,7 +53,7 @@ class TagController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('admin.tags.index')->with('message', 'New Tag has been submit!');
+        return redirect()->route('bagas.tags.index')->with('message', 'New Tag has been submit!');
     }
 
     /**
@@ -97,7 +97,7 @@ class TagController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('admin.tags.index')->with('message', 'Tag has been updated!');
+        return redirect()->route('bagas.tags.index')->with('message', 'Tag has been updated!');
     }
 
     /**
@@ -110,6 +110,6 @@ class TagController extends Controller
     {
         $tag->delete();
 
-        return redirect()->route('admin.tags.index')->with('message', 'Tag deleted successfully!');
+        return redirect()->route('bagas.tags.index')->with('message', 'Tag deleted successfully!');
     }
 }

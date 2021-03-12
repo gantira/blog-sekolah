@@ -68,7 +68,7 @@ class RegistrationController extends Controller
 
         Registration::create($registration);
 
-        return redirect()->route('admin.registrations.index')->with('message', 'New Registration has been submit!');
+        return redirect()->route('bagas.registrations.index')->with('message', 'New Registration has been submit!');
     }
 
     /**
@@ -126,7 +126,7 @@ class RegistrationController extends Controller
         $registration->update($registration);
 
 
-        return redirect()->route('admin.registrations.index')->with('message', 'New Registration has been updated!');
+        return redirect()->route('bagas.registrations.index')->with('message', 'New Registration has been updated!');
     }
 
     /**
@@ -139,7 +139,7 @@ class RegistrationController extends Controller
     {
         $registration->delete();
 
-        return redirect()->route('admin.registrations.index')->with('message', 'Registration deleted successfully!');
+        return redirect()->route('bagas.registrations.index')->with('message', 'Registration deleted successfully!');
     }
 
     public function export()

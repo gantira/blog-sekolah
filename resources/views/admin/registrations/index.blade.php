@@ -16,7 +16,7 @@
             <div class="col-lg-12 mb-4">
                 <div class="card">
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between w-100">
-                        <form method="GET" action="{{ route('admin.registrations.index') }}" class="w-100">
+                        <form method="GET" action="{{ route('bagas.registrations.index') }}" class="w-100">
                             <input type="search" name="search" id="search" class="form-control">
                         </form>
                     </div>
@@ -67,10 +67,10 @@
                                     <td>{{ $item->info_dari }}</td>
                                     <td>{{ $item->created_at->format('d m, Y') }}</td>
                                     <td class="d-flex justify-content-end">
-                                        {{-- <a href="{{ route('admin.registrations.edit', $item) }}"
+                                        {{-- <a href="{{ route('bagas.registrations.edit', $item) }}"
                                             class="btn  btn-primary mr-1">Edit</a> --}}
 
-                                        <form action="{{ route('admin.registrations.delete', $item) }}" method="POST"
+                                        <form action="{{ route('bagas.registrations.delete', $item) }}" method="POST"
                                             onclick="return confirm('Are you sure?')">
                                             @csrf
                                             @method('DELETE')

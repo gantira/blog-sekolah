@@ -17,7 +17,7 @@
             <div class="col-lg-12 mb-4">
                 <div class="card">
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between w-100">
-                        <form method="GET" action="{{ route('admin.categories.index') }}" class="w-100">
+                        <form method="GET" action="{{ route('bagas.categories.index') }}" class="w-100">
                             <input type="search" name="search" id="search" class="form-control">
                         </form>
                     </div>
@@ -36,10 +36,10 @@
                                     <td>{{ $categories->firstItem() + $key }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td class="d-flex justify-content-end">
-                                        <a href="{{ route('admin.categories.edit', $item) }}"
+                                        <a href="{{ route('bagas.categories.edit', $item) }}"
                                             class="btn  btn-primary mr-1">Edit</a>
 
-                                        <form action="{{ route('admin.categories.delete', $item) }}" method="POST"
+                                        <form action="{{ route('bagas.categories.delete', $item) }}" method="POST"
                                             onclick="return confirm('Are you sure?')">
                                             @csrf
                                             @method('DELETE')

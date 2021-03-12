@@ -18,7 +18,7 @@
                         <h6 class="m-0 font-weight-bold text-primary">Please fill in the following form</h6>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.categories.update', $category) }}" method="POST">
+                        <form action="{{ route('bagas.categories.update', $category) }}" method="POST">
                             @method('PUT')
 
                             @include('admin.categories._form', ['submit' => 'Update'])

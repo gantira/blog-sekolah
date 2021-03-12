@@ -17,7 +17,7 @@
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.registrations.exportExcel') }}" method="POST">
+                        <form action="{{ route('bagas.registrations.exportExcel') }}" method="POST">
                             @csrf
 
                             <button type="submit" class="btn btn-success">Export EXCEL</button>

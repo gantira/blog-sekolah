@@ -80,7 +80,7 @@ class GalleryController extends Controller
             }
         }
 
-        return redirect()->route('admin.galleries.index')->with('message', 'New Gallery has been submit!');
+        return redirect()->route('bagas.galleries.index')->with('message', 'New Gallery has been submit!');
     }
 
     /**
@@ -139,7 +139,7 @@ class GalleryController extends Controller
         $gallery->categories()->sync($request->category);
         $gallery->tags()->sync($request->tags);
 
-        return redirect()->route('admin.galleries.index')->with('message', 'New Gallery has been updated!');
+        return redirect()->route('bagas.galleries.index')->with('message', 'New Gallery has been updated!');
     }
 
     /**
@@ -156,6 +156,6 @@ class GalleryController extends Controller
 
         $gallery->delete();
 
-        return redirect()->route('admin.galleries.index')->with('message', 'Gallery deleted successfully!');
+        return redirect()->route('bagas.galleries.index')->with('message', 'Gallery deleted successfully!');
     }
 }

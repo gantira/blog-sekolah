@@ -74,7 +74,7 @@ class PostController extends Controller
         $post->categories()->sync($request->category);
         $post->tags()->sync($request->tags);
 
-        return redirect()->route('admin.posts.index')->with('message', 'New Post has been submit!');
+        return redirect()->route('bagas.posts.index')->with('message', 'New Post has been submit!');
     }
 
     /**
@@ -135,7 +135,7 @@ class PostController extends Controller
         $post->categories()->sync($request->category);
         $post->tags()->sync($request->tags);
 
-        return redirect()->route('admin.posts.index')->with('message', 'New Post has been updated!');
+        return redirect()->route('bagas.posts.index')->with('message', 'New Post has been updated!');
     }
 
     /**
@@ -152,6 +152,6 @@ class PostController extends Controller
 
         $post->delete();
 
-        return redirect()->route('admin.posts.index')->with('message', 'Post deleted successfully!');
+        return redirect()->route('bagas.posts.index')->with('message', 'Post deleted successfully!');
     }
 }

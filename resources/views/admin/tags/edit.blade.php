@@ -18,7 +18,7 @@
                         <h6 class="m-0 font-weight-bold text-primary">Please fill in the following form</h6>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.tags.update', $tag) }}" method="POST">
+                        <form action="{{ route('bagas.tags.update', $tag) }}" method="POST">
                             @method('PUT')
 
                             @include('admin.tags._form', ['submit' => 'Update'])

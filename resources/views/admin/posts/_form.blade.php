@@ -104,7 +104,7 @@
 
          // Select2 Single  with Placeholder
          $('.select2-single-placeholder').select2({
-             placeholder: "Select a Province",
+             placeholder: "Select a category",
              allowClear: true
          });
 
