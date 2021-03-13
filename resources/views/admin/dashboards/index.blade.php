@@ -336,8 +336,15 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                        <a href="login.html" class="btn btn-primary">Logout</a>
+                        <a href="#" onclick="event.preventDefault();getElementById('logout').submit();"
+                            class="btn btn-primary">Logout</a>
                     </div>
+
+
+                    <form action="{{ route('logout') }}" method="POST" id="logout">
+                        @csrf
+
+                    </form>
                 </div>
             </div>
         </div>

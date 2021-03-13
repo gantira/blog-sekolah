@@ -1,9 +1,9 @@
 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('bagas.dashboards.index') }}">
         <div class="sidebar-brand-icon">
             <img src="{{ asset('ruangadmin/img/logo/logo2.png') }}">
         </div>
-        <div class="sidebar-brand-text mx-3">{{ config('app.name') }}</div>
+        <div class="sidebar-brand-text mx-3">Admin</div>
     </a>
     <hr class="sidebar-divider my-0">
     <li class="nav-item ">

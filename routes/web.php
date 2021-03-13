@@ -16,13 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::loginUsingId(1);
-
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('bagas')->name('bagas.')->group(function () {
+Route::middleware('auth')->prefix('bagas')->name('bagas.')->group(function () {
 
     Route::name('dashboards.')->group(function () {
         Route::view('', 'admin.dashboards.index')->name('index');
