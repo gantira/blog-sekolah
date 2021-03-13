@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link href="{{ asset('ruangadmin/img/logo/logo.png') }}" rel="icon">
+  <link href="{{ asset('mazaya.ico') }}" rel="icon">
   <title>Login</title>
   <link href="{{ asset('ruangadmin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('ruangadmin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">

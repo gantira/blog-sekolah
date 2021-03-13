@@ -29,8 +29,8 @@
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="pricing.html">Pricing</a></li> --}}
 
-                <li class="{{ request()->routeIs('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
-                <li class="{{ request()->routeIs('contacts') ? 'active' : '' }}"><a href="{{ route('contacts.index') }}">Contact</a></li>
+                <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
+                <li class="{{ request()->routeIs('contacts.*') ? 'active' : '' }}"><a href="{{ route('contacts.index') }}">Contact</a></li>
                 <li class="{{ request()->routeIs('galleries.*') ? 'active' : '' }}"><a href="{{ route('galleries.index') }}">Gallery</a></li>
                 <li class="{{ request()->routeIs('articles.*') ? 'active' : '' }}"><a href="{{ route('articles.index') }}">Article</a></li>
 
