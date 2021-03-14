@@ -25,8 +25,10 @@
                     <ul>
                         <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/') }}">Home</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{{ route('contacts.index') }}">Contact</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('galleries.index') }}">Gallery</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('articles.index') }}">Articles</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('galleries.index') }}">Gallery</a>
+                        </li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('articles.index') }}">Articles</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -53,8 +55,8 @@
 
                 <div class="col-lg-4 col-md-6 footer-info">
                     <h3>About</h3>
-                    <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita
-                        valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                    <p>SMP Mazaya Islamic Boarding School mengutamakan Al-Quran dan Al-Hadist sebagai pondasi utama
+                        pendidikan yang mengintegrasikan pendidikan formal dengan pendidikan karakter bela agama</p>
                     <div class="social-links mt-3">
                         {{-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> --}}
                         <a href="{{ env('FACEBOOK') }}" class="facebook"><i class="bx bxl-facebook"></i></a>
