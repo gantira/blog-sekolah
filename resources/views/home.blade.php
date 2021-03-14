@@ -29,16 +29,12 @@
                         <div class="carousel-item" style="background: url(eterna/img/slide/slide-2.jpg)">
                             <div class="carousel-container">
                                 <div class="carousel-content">
-                                    <h2 class="animate__animated fanimate__adeInDown">Lorem <span>Ipsum Dolor</span>
+                                    <h2 class="animate__animated fanimate__adeInDown"><span>Fasilitas</span>
                                     </h2>
-                                    <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid
-                                        qui
-                                        aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias
-                                        dolorem
-                                        mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus
-                                        deleniti
-                                        vel. Minus et tempore modi architecto.</p>
-                                    <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                                    <p class="animate__animated animate__fadeInUp">
+                                        Mesjid, Asrama Putra, Asrama Putri, Gedung Sekolah, Lapangan Olahraga, Lab IPA, Lab Komputer, Ruang Makan, Ruang Laundry, Koperasi, Taman dan Gazebo, Gedung Serbaguna, Perpustakaan, Unit Kesehatan Siswa
+                                    </p>
+                                    {{-- <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -47,16 +43,12 @@
                         <div class="carousel-item" style="background: url(eterna/img/slide/slide-3.jpg)">
                             <div class="carousel-container">
                                 <div class="carousel-content">
-                                    <h2 class="animate__animated animate__fadeInDown">Sequi ea <span>Dime Lara</span>
+                                    <h2 class="animate__animated animate__fadeInDown"><span>Fasilitas</span> Pelayanan
                                     </h2>
-                                    <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid
-                                        qui
-                                        aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias
-                                        dolorem
-                                        mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus
-                                        deleniti
-                                        vel. Minus et tempore modi architecto.</p>
-                                    <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                                    <p class="animate__animated animate__fadeInUp">
+                                        Laundry, Makan 3x sehari, Keamanan (Security 24 Jam), Kesehatan, Bimbingan konseling
+                                    </p>
+                                    {{-- <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -85,30 +77,16 @@
             <div class="container">
 
                 <div class="row">
+                    @foreach ($posts as $item)
                     <div class="col-lg-4">
                         <div class="icon-box">
-                            <i class="icofont-computer"></i>
-                            <h3><a href="">Character</a></h3>
-                            {{-- <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                                occaecati cupiditate non provident</p> --}}
+                            <blockquote>
+                                <h3><a href="{{ route('articles.show', $item->slug) }}">{{ \Str::limit($item->title, 55) }}</a></h3>
+                            </blockquote>
+                            <p>{!! \Str::limit(strip_tags($item->body), 30) !!}</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 mt-4 mt-lg-0">
-                        <div class="icon-box">
-                            <i class="icofont-image"></i>
-                            <h3><a href="">Integrity</a></h3>
-                            {{-- <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat tarad limino ata</p> --}}
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-4 mt-lg-0">
-                        <div class="icon-box">
-                            <i class="icofont-tasks-alt"></i>
-                            <h3><a href="">Competence</a></h3>
-                            {{-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                nulla pariatur</p> --}}
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
 
             </div>
@@ -120,7 +98,7 @@
 
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="{{ asset('eterna/img/about.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('banner.jpg') }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content">
                         <h3>Kenapa harus memilih SMP Mazaya Islamic Boarding School?</h3>

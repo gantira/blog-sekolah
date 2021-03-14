@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::middleware('auth')->prefix('bagas')->name('bagas.')->group(function () {
 
     Route::name('')->group(function () {

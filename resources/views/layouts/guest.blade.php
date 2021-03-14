@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('eterna/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('eterna/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('mazaya.ico') }}" rel="icon">
+    <link href="{{ asset('mazaya.ico') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
