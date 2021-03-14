@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\{CategoryController, GalleryController as AdminGalleryController, PostController, RegistrationController, TagController};
+use App\Http\Controllers\Admin\{CategoryController, DashboardController, GalleryController as AdminGalleryController, PostController, RegistrationController, TagController};
 use App\Http\Controllers\{ArticleController, ContactController, GalleryController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -18,12 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::middleware('auth')->prefix('bagas')->name('bagas.')->group(function () {
 
-    Route::name('dashboards.')->group(function () {
-        Route::view('', 'admin.dashboards.index')->name('index');
+    Route::name('')->group(function () {
+        Route::get('', [DashboardController::class, 'index'])->name('index');
     });
 
     Route::prefix('posts')->name('posts.')->group(function () {
