@@ -61,7 +61,7 @@ class PostController extends Controller
         ]);
 
         if ($request->file('thumbnail')) {
-            $thumbnail = Storage::disk('public')->put('images', $request->file('thumbnail'));
+            $thumbnail = Storage::disk('public')->put('articles', $request->file('thumbnail'));
         }
 
         $post = Auth::user()->posts()->create([
@@ -122,7 +122,7 @@ class PostController extends Controller
             if (Storage::disk('public')->exists($post->thumbnail)) {
                 Storage::disk('public')->delete($post->thumbnail);
             }
-            $thumbnail = Storage::disk('public')->put('images', $request->file('thumbnail'));
+            $thumbnail = Storage::disk('public')->put('articles', $request->file('thumbnail'));
         }
 
         $post->update([

@@ -66,13 +66,12 @@ class GalleryController extends Controller
             'status' => $request->status,
         ]);
 
-        $gallery->tags()->attach($request->tag);
+        $gallery->tags()->sync($request->tag);
 
         if ($request->hasFile('images')) {
             $images = $request->file('images');
             foreach ($images as $key => $file) {
-                $file_name =  time() . $key . '-' . Str::slug($request->title) . '.' . $file->getClientOriginalExtension();
-                $image = Storage::disk('public')->putFileAs('images', $file, $file_name);
+                $image = Storage::disk('public')->put('galleries', $file);
 
                 $gallery->images()->create([
                     'image' => $image
@@ -104,6 +103,7 @@ class GalleryController extends Controller
     {
         return view('admin.galleries.edit', [
             'gallery' => $gallery,
+            'tags' => Tag::pluck('name', 'id'),
         ]);
     }
 
@@ -118,26 +118,17 @@ class GalleryController extends Controller
     {
         $request->validate([
             'title' => 'required|min:3|max:255',
-            'body' => 'required|min:3',
+            'body' => 'nullable|min:3',
             'status' => 'required|in:published,draft',
         ]);
-
-        if ($request->file('thumbnail')) {
-            if (Storage::disk('public')->exists($gallery->thumbnail)) {
-                Storage::disk('public')->delete($gallery->thumbnail);
-            }
-            $thumbnail = Storage::disk('public')->put('images', $request->file('thumbnail'));
-        }
 
         $gallery->update([
             'title' => $request->title,
             'body' => $request->body,
-            'thumbnail' => $thumbnail ?? $gallery->thumbnail,
             'status' => $request->status,
         ]);
 
-        $gallery->categories()->sync($request->category);
-        $gallery->tags()->sync($request->tags);
+        $gallery->tags()->sync($request->tag);
 
         return redirect()->route('bagas.galleries.index')->with('message', 'New Gallery has been updated!');
     }
@@ -150,10 +141,14 @@ class GalleryController extends Controller
      */
     public function destroy(Gallery $gallery)
     {
-        if (Storage::disk('public')->exists($gallery->thumbnail)) {
-            Storage::disk('public')->delete($gallery->thumbnail);
+        foreach ($gallery->images()->get() as $key => $value) {
+            if (Storage::disk('public')->exists($value->image)) {
+                Storage::disk('public')->delete($value->image);
+            }
         }
 
+        $gallery->tags()->detach();
+        $gallery->images()->delete();
         $gallery->delete();
 
         return redirect()->route('bagas.galleries.index')->with('message', 'Gallery deleted successfully!');

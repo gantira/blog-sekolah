@@ -70,9 +70,9 @@ Route::middleware('auth')->prefix('bagas')->name('bagas.')->group(function () {
         Route::post('export', [AdminGalleryController::class, 'exportExcel'])->name('exportExcel');
         Route::post('', [AdminGalleryController::class, 'store'])->name('store');
         Route::get('create', [AdminGalleryController::class, 'create'])->name('create');
-        Route::get('{registration}', [AdminGalleryController::class, 'edit'])->name('edit');
-        Route::put('{registration}', [AdminGalleryController::class, 'update'])->name('update');
-        Route::delete('{registration}', [AdminGalleryController::class, 'destroy'])->name('delete');
+        Route::get('{gallery}', [AdminGalleryController::class, 'edit'])->name('edit');
+        Route::put('{gallery}', [AdminGalleryController::class, 'update'])->name('update');
+        Route::delete('{gallery}', [AdminGalleryController::class, 'destroy'])->name('delete');
     });
 });
 

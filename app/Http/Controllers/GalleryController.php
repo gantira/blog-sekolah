@@ -16,8 +16,10 @@ class GalleryController extends Controller
     public function index()
     {
         return view('galleries.index', [
-            'galleries' => Gallery::get(),
-            'tags' => Tag::select('name', 'slug')->whereHas('galleries')->get(),
+            'galleries' => Gallery::whereStatus('published')->get(),
+            'tags' => Tag::select('name', 'slug')->whereHas('galleries', function($query) {
+                $query->whereStatus('published');
+            })->get(),
         ]);
     }
 

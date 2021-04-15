@@ -18,10 +18,10 @@
                         <h6 class="m-0 font-weight-bold text-primary">Please fill in the following form</h6>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('bagas.posts.update', $post) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('bagas.galleries.update', $gallery) }}" method="POST" enctype="multipart/form-data">
                             @method('PUT')
 
-                            @include('admin.posts._form', ['submit' => 'Update'])
+                            @include('admin.galleries._form', ['submit' => 'Update'])
 
                         </form>
                     </div>
