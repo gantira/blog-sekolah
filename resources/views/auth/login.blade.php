@@ -14,10 +14,10 @@
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="text" class="form-control @error('username') is-invalid @enderror"
-                                                name="username" value="{{ old('username') }}" required autocomplete="username"
-                                                autofocus placeholder="Enter Username or Email">
-                                            @error('username')
+                                            <input type="text" class="form-control @error('email') is-invalid @enderror"
+                                                name="email" value="{{ old('email') }}" required autocomplete="email"
+                                                autofocus placeholder="Enter Email">
+                                            @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
